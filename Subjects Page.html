@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Changa" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        body p {
+            font-family: 'Changa', sans-serif;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .Image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .Title div {
+            position: absolute;
+            top: 5%;
+            width: auto;
+            height: auto;
+            font-size: 45px;
+            color: white;
+            text-align: center;
+        }
+
+        #RightTitle {
+            right: 8%;
+        }
+
+        #LeftTitle {
+            left: 2%;
+        }
+
+        .ExternalBorder {
+            border-style: solid;
+            border-width: 10px;
+            border-color: blue;
+            background-color: red;
+            width: 400px;
+            height: 300px;
+            border-radius: 150px;
+
+            margin-top: 0%;
+            margin-left: 17%;
+            align-items: center;
+        }
+
+        .InternalBorder {
+            border-style: solid;
+            border-width: 10px;
+            border-color: transparent;
+            align-items: center;
+            width: 500px;
+            height: 500px;
+            border-radius: 250px;
+
+            margin-top: 0%;
+            margin-left: 17%;
+            align-items: center;
+        }
+
+        #ExternalImage {
+            border: 7px solid #18D2FF;
+            background: transparent;
+            width: 400px;
+            height: 400px;
+            border-radius: 200px;
+            margin-top: 25px;
+            margin-left: 25%;
+            align-items: center;
+
+        }
+
+        #internalImage {
+            border: 6px solid #18D2FF;
+            background: transparent;
+            width: 385px;
+            height: 385px;
+            border-radius: 200px;
+            margin-top: 2px;
+            margin-left: 2px;
+            align-items: center;
+        }
+
+        #subject ul li:hover {
+            background-color: #f2b629;
+        }
+
+        #subject ul li a {
+            margin: 28px;
+            padding: 2px 0 3px 18px;
+            display: block;
+            line-height: 28px;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 24px;
+
+            text-decoration: none;
+            text-align: right;
+
+        }
+
+
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+            var ContentOfSubjects =
+                {
+                    "p1_1": [{
+                        "subject": "برمجة1",
+                        "desc": "<br/>:مفهوم البرمجة ومراحل تطورها<br/><br/>الخطوات الأساسية في كتابة البرنامج-<br/>دور الخوارزميات غي البرمجة-<br/>تحليل المسائل وتصميم الحلول الموافقة-<br/>المخططات التدفقية-<br/>المكونات الأساسية للغة البرمجة-<br/>مفهوم المتغيرات والثوابت وأنواعها-<br/>مفهوم أوامر الادخال والاخراج-<br/>مفهوم الشرط والحلقات التكرارية والتراجعية-<br/>مفهوم المصفوفات-مفهوم البرامج الجزئيةوالإجرائية والتوابع-<br/>كتابة برمجيات تحقق معايير معروقة-"
+                    },
+                        {
+                            "subject": "تحليل1",
+                            "desc": "تهدف هذه المادة الى تعريف الطالب بالمتتاليات العددية والسلاسل العددية وكيفية دراسة تقاربها إضافة الى مفهوم المتتاليات والسلاسل التابعية كما تتم دراسة اشتقاق وتفاضل التوابع بشكل معمق, يتعرف الطالب أيضا على مفهوم التوابع اللامتناهية في الكبر ودراسة تحولات التابع ونشرها, يتم التعرف في نهاية هذه المادة على نظريات القيم الوسطى وتطبيقاتها في نشر التوابع مفردات هذا المقرر <br/><br/>المتتاليات-<br/>السلاسل-<br/>المتتاليات والسلاسل التابعية-<br/>نهاية واستمرار تابع-<br/>اشتقاق وتفاضل التوابع-<br/>دراسة تحولات التوابع-<br/>نظريات القيم الوسطى وتطبيقاتها في نشر التوابع-<br/> التوابع لعدجة متحولات-  "
+                        },
+                        {
+                            "subject": "فيزياء1",
+                            "desc": "تهدف هذه المادة الى التعريف بأهم مبادئ الكهرباء الساكنة وأشكال واّثار التيار الكهربائي إضافة إلى الحقول الكهربائية وبعض التطبيقات في مجال الحاسوب ,كما يتعرف الطالب على مفهوم الحقول المغناطيسية ومنابعها ومفهوم التلوث بالأمواج الكهرومغناطيسية مفردات هذا المقرر<br/><br/>تحليل المتجهات-<br/>الكهرباء الساكنة-<br/>الحقل والكمون الكهربائي-<br/>المكثفات والمقاومات والملفات-<br/>التيار الكهربائي-<br/>الحقل المغناطيسي-<br/>منابع الحقل المغناطيسي-<br/>التحريض الكهرطيسي-<br/>التلوث بالأشعة الكهرومغناطيسية-"
+                        }
+                        , {"subject": "لغة انكليزية1", "desc": ""},
+                        {"subject": "لغة عربية", "desc": ""}
+                        , {"subject": "الثقافة القومية", "desc": ""},
+                        {
+                            "subject": "مبادئ عمل الحواسيب",
+                            "desc": "يهدف المقرر الى تعريف الطالب بالحاسوب ومكوناته العتادية وتعامله مع أجهزة الوسط الخارجي من أجهزة الدخل والخرج والذاكرة ,ويحتوي المقرر على تعاريف ومبادئ عمل كثير من الأجهزة التي يتعامل معهاالطالب ويحتاجها في الكلية وحياته المهنية مفردات هذا المقرر<br/><br/> مكونات الحاسب-<br/>بنية لوحة الأم-<br/>الذاكرة-<br/>أجهزة الدخل-<br/>أجهزة الخرج-أجهزة الإظهار-<br/>الأجهزة المحيطية التخزينية-<br/>أجهزة خاصة-<br/>مقدمة عامة عن الشبكات-"
+                        }
+
+                    ],
+                    "p1_2": [{
+                        "subject": "برمجة2",
+                        "desc": "هي سلسلة متكاملة مع مقرر برمجة1, مفردات هذا المقرر<br/><br/>(مفهوم المعطيات المركبة ,الملفات النصية,الملفات الثنائية ,السجلات)-<br/>المؤشرات-<br/>البرمجة الكتلية-<br/>البرمجة غرضية التوجه-<br/>"
+                    },
+                        {
+                            "subject": "تحليل2",
+                            "desc": "تهدف هذه المادة الى تعريف الطالب بالتكامل المحدد وغير المحدد إضافة إلى التكاملات الثنائية والثلاثية والمعتلة والمنحنية, كما يتعرف الطالب على أهم مواضيع الهندسة التحليلية ,مفردات هذا المقرر<br/><br/>التكاملات المحددة-<br/>التكاملات غير المحددة-<br/>التكاملات المعتلة -<br/>التكاملات الثنائية-<br/>التكاملات الثلاثية-<br/>التكاملات المنحنية-<br/>الهندسة التحليلية في الفراغ-"
+                        },
+                        {
+                            "subject": "فيزياء2",
+                            "desc": "تهدف هذه المادة الى التعريف بطبيعة الضوء ومنابعه وانعكاسه وانكساره على السطوح المستوية والكروية إضافة الى مفهوم انعراج الضوء وتداخل الأمواج الضوئية , كما يتعرف الطالب على مفهوم الليزر والألياف البصرية والصوت والأمواج فوق الصوتية ,مفردات هذا المقرر<br/><br/>طبيعة الضوء-<br/>انكسار الضوء على السطوح المستوية-<br/>الإنكسار والإنعكاس على السطوح الكروية-<br/>تداخل الأمواج الضوئية-<br/>انعراج الضوء-<br/>الليزر-<br/>استقطاب الضوء-<br/>الألياف البصريةالصوت-"
+                        },
+                        {"subject": "لغة انكليزية2", "desc": ""},
+                        {"subject": "رياضيات متقطعة", "desc": ""},
+                        {
+                            "subject": "جبر خطي",
+                            "desc": "تهدف هذه المادة اللى تعريف الطالب بمفهوم المصفوفات والمحددات وتطبيقاتها وأهم مواضيع الجبر الخطي , كما يتعرف الطالب على أهم تطبيقات الجبر الخطي, مفردات هذا المقرر<br/><br/>المصفوفات والمحددات-<br/>القيم الذاتية والأشعة الذاتية-<br/>حل جملة معادلات خطية-<br/>التطبيقات الخطية والمؤثرات الخطية-<br/>التقطير والتثليث-<br/>فضاء الجداء الداخلي للمؤثرات الخطية-<br/>الصيغ التربيعية والقانونية-<br/>تطبيقات في الجبر الخطي-<br/>جذور المعادلات العامة من الدرجتين الثالثة والرابعة-"
+                        },
+                        {
+                            "subject": "الدارات الكهربائية",
+                            "desc": "تهدف هذه المادة اللى تعريف الطالب بالدارات الكهربائية ذات التيار المستمر والتيار المتناوب الجيبي وطرق تحليل تلك الدارات,بالإضافة إلى ماسبق إعطاء الطالب مقدمة بالنظريات الأساسية المستخدمة في تحليل الدارات الإلكترونية وطرق تحليل رباعيات الأقطاب وأنواعها,مفردات هذا المقرر<br/><br/>نظام الوحدات وتعاريف أساسية-<br/>مكونات الدارة الكهربائية وأنواع الدارات الكهربائية-<br/>طرق حل دارات التيار المستمر-<br/> الكهرطيسية والدارات المغناطيسية-<br/>دارات التيار المتناوب الجيبي -<br/>طرق حل دارات التيار المتناوب الجيبي -<br/>رباعيات الأقطاب-"
+                        }
+                    ],
+                    "p2_1": [{"subject": "تحليل3", "desc": ""},
+                        {"subject": "تحليل عددي1", "desc": ""},
+                        {"subject": "البرمجة الرياضية", "desc": ""},
+                        {"subject": "لغة انكليزية تخصصية3", "desc": ""},
+                        {"subject": "الالكترونيات", "desc": ""},
+                        {"subject": "برمجة3", "desc": ""},
+                        {"subject": "احتمالات", "desc": ""}
+
+                    ],
+                    "p2_2": [{"subject": "تحليل4", "desc": ""},
+                        {"subject": "تحليل عددي2", "desc": ""},
+                        {"subject": "الإحصاء", "desc": ""},
+                        {"subject": "مهارات التواصل", "desc": ""},
+                        {"subject": "لغة أجنبية تخصصية4", "desc": ""},
+                        {"subject": "نظم ودارات منطقية", "desc": ""},
+                        {"subject": "خوارزميات وبنى المعطيات1", "desc": ""}],
+
+                    "p3_1": [{"subject": "معالج مصغر", "desc": ""},
+                        {"subject": "معالجة إشارة", "desc": ""},
+                        {"subject": "نظرية المعلومات", "desc": ""},
+                        {"subject": "رسوميات حاسوبية", "desc": ""},
+                        {"subject": "لغات صورية", "desc": ""},
+                        {"subject": "مبادئ الذكاء الصنعي", "desc": ""},
+                        {"subject": "خوارزميات وبنى المعطيات2", "desc": ""}
+                    ],
+                    "p3_2": [{"subject": "بنية وتنظيم الحاسب1", "desc": ""},
+                        {"subject": "شبكات حاسوبية", "desc": ""},
+                        {"subject": "الاتصالات التشابهية والرقمية", "desc": ""},
+                        {"subject": "هندسة برمجيات1", "desc": ""},
+                        {"subject": "خوارزميات وبنى المعطيات3", "desc": ""},
+                        {"subject": "قواعد معطيات 1", "desc": ""},
+                        {"subject": "نظرية المخططات", "desc": ""}
+                    ],
+                    "p4_1": [{"subject": "نظم تشغيل1", "desc": ""},
+                        {"subject": "بنية وتنظيم الحاسب2 ", "desc": ""},
+                        {"subject": "ننظم رقمية مبرمجة", "desc": ""},
+                        {"subject": "أمن الملومات", "desc": ""},
+                        {"subject": "الشبكات الحاسوبية المتقدمة", "desc": ""},
+                        {"subject": "نظرية الأرتال", "desc": ""},
+                        {"subject": "البرمجة المنطقية", "desc": ""},
+
+                    ],
+                    "p4_2": [{"subject": "بحوث عمليات", "desc": ""},
+                        {"subject": "برمجة تفرعية", "desc": ""},
+                        {"subject": "وسائط متعددة", "desc": ""},
+                        {"subject": "عصبونية", "desc": ""},
+                        {"subject": "روبوتية", "desc": ""},
+                        {"subject": "هندسة برمجيات2", "desc": ""},
+                        {"subject": "نظم تشغيل2", "desc": ""},
+                        {"subject": "مشروع", "desc": ""}
+                    ],
+                    "p5_1": ["", "", "", "", "", "", "", ""],
+                    "p5_2": ["", "", "", "", "", "", "", ""]
+
+                }
+            $('#1years').click(function () {
+                $('#b1').text((ContentOfSubjects.p1_1[0].subject));
+                $('#b2').text(ContentOfSubjects.p1_1[1].subject);
+                $('#b3').text(ContentOfSubjects.p1_1[2].subject);
+                $('#b4').text(ContentOfSubjects.p1_1[3].subject);
+                $('#b5').text(ContentOfSubjects.p1_1[4].subject);
+                $('#b6').text(ContentOfSubjects.p1_1[5].subject);
+                $('#b7').text(ContentOfSubjects.p1_1[6].subject);
+                $('#b8').text(ContentOfSubjects.p1_2[0].subject);
+                $('#b9').text(ContentOfSubjects.p1_2[1].subject);
+                $('#b10').text(ContentOfSubjects.p1_2[2].subject);
+                $('#b11').text(ContentOfSubjects.p1_2[3].subject);
+                $('#b12').text(ContentOfSubjects.p1_2[4].subject);
+                $('#b13').text(ContentOfSubjects.p1_2[5].subject);
+                $('#b14').text(ContentOfSubjects.p1_2[6].subject);
+
+                $('#b1').click(function () {
+                    $('#descrption').html(ContentOfSubjects.p1_1[0].desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_1[0].subject));
+                    $('#picture').attr("src", "images/Subjects/c1.jpg");
+                });
+
+                $('#b2').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_1[1].desc));
+                    $('#NameofSubject').text((ContentOfSubjects.p1_1[1].subject));
+                    $('#picture').attr("src", "images/Subjects/Math 1.jpg");
+                });
+
+                $('#b3').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_1[2]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_1[2].subject));
+                    $('#picture').attr("src", "images/Subjects/f1.jpg");
+                });
+
+                $('#b4').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_1[3]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_1[3].subject));
+
+                });
+                $('#b5').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_1[4]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_1[4].subject));
+                });
+                $('#b6').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_1[5]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_1[5].subject));
+                });
+                $('#b7').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_1[6]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_1[6].subject));
+                    $('#picture').attr("src", "images/Subjects/mb.jpg");
+                });
+                $('#b8').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_2[0]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_2[0].subject));
+                    $('#picture').attr("src", "images/Subjects/b2.jpg");
+                });
+
+                $('#b9').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_2[1]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_2[1].subject));
+                    $('#picture').attr("src", "images/Subjects/ana2.jpg");
+                });
+                $('#b10').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_2[2]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_2[2].subject));
+                    $('#picture').attr("src", "images/Subjects/f2.jpg");
+                });
+                $('#b11').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_2[3]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_2[3].subject));
+                });
+                $('#b12').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_2[4]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_2[4].subject));
+                });
+                $('#b13').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_2[5]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_2[5].subject));
+                    $('#picture').attr("src", "images/Subjects/G.jpg");
+                });
+                $('#b14').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p1_2[6]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p1_2[6].subject));
+                    $('#picture').attr("src", "images/Subjects/k1.jpg");
+                });
+
+
+            });
+            $('#2years').click(function () {
+                $('#b1').text((ContentOfSubjects.p2_1[0].subject));
+                $('#b2').text(ContentOfSubjects.p2_1[1].subject);
+                $('#b3').text(ContentOfSubjects.p2_1[2].subject);
+                $('#b4').text(ContentOfSubjects.p2_1[3].subject);
+                $('#b5').text(ContentOfSubjects.p2_1[4].subject);
+                $('#b6').text(ContentOfSubjects.p2_1[5].subject);
+                $('#b7').text(ContentOfSubjects.p2_1[6].subject);
+                $('#b8').text(ContentOfSubjects.p2_2[0].subject);
+                $('#b9').text(ContentOfSubjects.p2_2[1].subject);
+                $('#b10').text(ContentOfSubjects.p2_2[2].subject);
+                $('#b11').text(ContentOfSubjects.p2_2[3].subject);
+                $('#b12').text(ContentOfSubjects.p2_2[4].subject);
+                $('#b13').text(ContentOfSubjects.p2_2[5].subject);
+                $('#b14').text(ContentOfSubjects.p2_2[6].subject);
+
+
+                $('#b1').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_1[0].desc));
+                    $('#NameofSubject').text((ContentOfSubjects.p2_1[0].subject));
+                });
+
+                $('#b2').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_1[1].desc));
+                    $('#NameofSubject').text((ContentOfSubjects.p2_1[1].subject));
+                });
+
+                $('#b3').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_1[2]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_1[2].subject));
+                });
+
+                $('#b4').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_1[3]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_1[3].subject));
+                });
+                $('#b5').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_1[4]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_1[4].subject));
+                });
+                $('#b6').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_1[5]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_1[5].subject));
+                });
+                $('#b7').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_1[6]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_1[6].subject));
+                });
+                $('#b8').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_2[0]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_2[0].subject));
+                });
+                $('#b9').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_2[1]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_2[1].subject));
+                });
+                $('#b10').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_2[2]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_2[2].subject));
+                });
+                $('#b11').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_2[3]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_2[3].subject));
+                });
+                $('#b12').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_2[4]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_2[4].subject));
+                });
+                $('#b13').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_2[5]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_2[5].subject));
+                });
+                $('#b14').click(function () {
+                    $('#descrption').html((ContentOfSubjects.p2_2[6]).desc);
+                    $('#NameofSubject').text((ContentOfSubjects.p2_2[6].subject));
+                });
+
+
+            });
+            $('#3years').click(function () {
+                $('#b1').text((ContentOfSubjects.p3_1[0].subject));
+                $('#b2').text(ContentOfSubjects.p3_1[1].subject);
+                $('#b3').text(ContentOfSubjects.p3_1[2].subject);
+                $('#b4').text(ContentOfSubjects.p3_1[3].subject);
+                $('#b5').text(ContentOfSubjects.p3_1[4].subject);
+                $('#b6').text(ContentOfSubjects.p3_1[5].subject);
+                $('#b7').text(ContentOfSubjects.p3_1[6].subject);
+                $('#b8').text(ContentOfSubjects.p3_2[0].subject);
+                $('#b9').text(ContentOfSubjects.p3_2[1].subject);
+                $('#b10').text(ContentOfSubjects.p3_2[2].subject);
+                $('#b11').text(ContentOfSubjects.p3_2[3].subject);
+                $('#b12').text(ContentOfSubjects.p3_2[4].subject);
+                $('#b13').text(ContentOfSubjects.p3_2[5].subject);
+                $('#b14').text(ContentOfSubjects.p3_2[6].subject);
+            });
+            $('#4years').click(function () {
+                $('#b1').text((ContentOfSubjects.p4_1[0].subject));
+                $('#b2').text(ContentOfSubjects.p4_1[1].subject);
+                $('#b3').text(ContentOfSubjects.p4_1[2].subject);
+                $('#b4').text(ContentOfSubjects.p4_1[3].subject);
+                $('#b5').text(ContentOfSubjects.p4_1[4].subject);
+                $('#b6').text(ContentOfSubjects.p4_1[5].subject);
+                $('#b7').text(ContentOfSubjects.p4_1[6].subject);
+                $('#b8').text(ContentOfSubjects.p4_2[0].subject);
+                $('#b9').text(ContentOfSubjects.p4_2[1].subject);
+                $('#b10').text(ContentOfSubjects.p4_2[2].subject);
+                $('#b11').text(ContentOfSubjects.p4_2[3].subject);
+                $('#b12').text(ContentOfSubjects.p4_2[4].subject);
+                $('#b13').text(ContentOfSubjects.p4_2[5].subject);
+                $('#b14').text(ContentOfSubjects.p4_2[6].subject);
+            });
+            $('#5years').click(function () {
+                $('#b1').text((ContentOfSubjects.p5_1[0].subject));
+                $('#b2').text(ContentOfSubjects.p5_1[1].subject);
+                $('#b3').text(ContentOfSubjects.p5_1[2].subject);
+                $('#b4').text(ContentOfSubjects.p5_1[3].subject);
+                $('#b5').text(ContentOfSubjects.p5_1[4].subject);
+                $('#b6').text(ContentOfSubjects.p5_1[5].subject);
+                $('#b7').text(ContentOfSubjects.p5_1[6].subject);
+                $('#b8').text(ContentOfSubjects.p5_2[0].subject);
+                $('#b9').text(ContentOfSubjects.p5_2[1].subject);
+                $('#b10').text(ContentOfSubjects.p5_2[2].subject);
+                $('#b11').text(ContentOfSubjects.p5_2[3].subject);
+                $('#b12').text(ContentOfSubjects.p5_2[4].subject);
+                $('#b13').text(ContentOfSubjects.p5_2[5].subject);
+                $('#b14').text(ContentOfSubjects.p5_2[6].subject);
+            });
+
+
+        });
+
+
+    </script>
+
+
+</head>
+
+<body>
+<div style="align-content: center; shape-margin: 0px;">
+    <div class="Image">
+        <img src="images/Subjects/Untitled-11.png">
+        <div></div>
+    </div>
+
+    <div class="Title">
+        <div id="RightTitle">
+            <p>كلية الهندسة المعلوماتية</p>
+        </div>
+
+        <div id="LeftTitle">
+            <p>Information Tecnology</p>
+        </div>
+    </div>
+    <div style="width: 300; height: 300; background-color:black;">
+
+    </div>
+
+    <div id="Image"
+         style=" margin-top: -190%; margin-left: 29%; width:500px; height:500px; align-content: center; align-items: center; ">
+        <img id="MainImage" src="images/Subjects/Subjects Description1.png" style="width:550px; height:550px;">
+    </div>
+
+
+    <div style="display: flex;  margin-top: 5%; ">
+        <img id="5years" src="images/Subjects/5.png" style="width:270px; height:270px;">
+        <img id="4years" src="images/Subjects/4.png" style="width:270px; height:270px;">
+        <img id="3years" src="images/Subjects/3.png" style="width:270px; height:270px;">
+        <img id="2years" src="images/Subjects/2.png" style="width:270px; height:270px;">
+        <img id="1years" src="images/Subjects/1.png" style="width:270px; height:270px;">
+    </div>
+
+    <div style="display: block;">
+
+        <div style="display: flex; margin-left: 3%; margin-top: -5%; ">
+
+            <div style="width: 900px; height: 1300px; background-color:black; opacity:0.7;
+        filter:alpha(opacity=70);   font-family: 'Cairo', sans-serif;
+        font-weight: bold;
+        color: white; margin-right: 0%; margin-top: 12%;">
+
+                <h1 id="NameofSubject" style="color:#f2b629;" align="center"></h1>
+                <img style="border-radius: 50px;   margin-left: 38px;  width:800px; height:300px;" id="picture"></img>
+                <p id="descrption" align="right"
+                   style="font-size:24px; color:#ffffff; padding-right: 30px;font-size:24px; "></p>
+
+            </div>
+
+            <div id="subject" style="width: 350px; height: 1300px; background-color:black; margin-left:  5%; margin-right: 2%; margin-top: 12%;  opacity:0.7;
+        filter:alpha(opacity=70);   font-family: 'Cairo', sans-serif;">
+                <div id="الفصل الاول">
+
+                    <ul style="color:#f2b629;  font-weight:bold; font-size: 28px;">الفصل الأول
+                        <li><a id="b1" href="#"></a></li>
+                        <li><a id="b2" href="#"></a></li>
+                        <li><a id="b3" href="#"></a></li>
+                        <li><a id="b4" href="#"></a></li>
+                        <li><a id="b5" href="#"></a></li>
+                        <li><a id="b6" href="#"></a></li>
+                        <li><a id="b7" href="#"></a></li>
+                    </ul>
+                </div>
+                <div id=" الفصل الثاني">
+                    <ul style="color:#f2b629;  font-weight:bold; font-size: 28px; ">الفصل الثاني
+                        <li><a id="b8" href="#"></a></li>
+                        <li><a id="b9" href="#"></a></li>
+                        <li><a id="b10" href="#"></a></li>
+                        <li><a id="b11" href="#"></a></li>
+                        <li><a id="b12" href="#"></a></li>
+                        <li><a id="b13" href="#"></a></li>
+                        <li><a id="b14" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    function sfsdfs() {
+        var aknsld = prompt("sdfodsjfnsd")
+
+    }
+</script>
+</body>
+</html>

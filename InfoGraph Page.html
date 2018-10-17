@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+	</head>
+
+<style type="text/css">
+
+body 
+{
+	margin: 0px;
+}
+	.CanvasStyle
+	{
+
+		align-items: center;
+	}
+
+	#TopCanvas
+	{
+		background-color: #202020;
+		margin-left: 25%;
+		width: 50%;
+	}
+
+	#DownCanvas 
+	{
+		background-color: transparent;
+		width: 17%;
+		height: 17%;
+		margin-top: 0%;
+		margin-left: 41.5%;
+	}
+	#DivTopCanvas
+	{
+
+	}
+
+	#DivDownCanvas
+	{
+		margin-top: -28.5%;
+	}
+
+</style>
+	<body>
+	<div id="DivTopCanvas">
+	<canvas class="CanvasStyle" id="TopCanvas" width="1040" height="3000"></canvas>
+	<script type="text/javascript">
+		var c = document.querySelector("#TopCanvas");
+		var ctx = c.getContext("2d");
+
+
+		ctx.strokeStyle = "#FBFBFB";
+		ctx.fillStyle = "#202020";
+		ctx.lineWidth=5;
+		ctx.strokeRect(40, 60, 960, 2880);
+
+		ctx.lineWidth=3;
+		ctx.font = "70pt Impact";
+		//The start title 
+		ctx.fillText("IT Engineer Life Cycle", 110, 190);
+		ctx.strokeText("IT Engineer Life Cycle", 110, 190);
+
+	//1
+		ctx.fillStyle = "#A22E79";
+		ctx.strokeStyle = "#A22E79";
+
+		//Main rectangle
+		ctx.strokeRect(342, 475, 358, 150);
+
+		// The long bottom arrow
+		ctx.beginPath();
+		ctx.moveTo(516, 625);
+		ctx.lineTo(516, 820);
+		ctx.lineTo(506, 810);
+		ctx.lineTo(521, 855);
+		ctx.lineTo(536, 810);
+		ctx.lineTo(526, 820);
+		ctx.lineTo(526, 625);
+		ctx.fill();
+
+		//The big right circul 
+		ctx.beginPath();
+		ctx.arc(815, 350, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+		//The big left circul
+		ctx.beginPath();
+		ctx.arc(225, 350, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+
+/****************************************************/
+		ctx.fillStyle = "#FBFBFB";
+		ctx.strokeStyle = "#202020";
+		ctx.lineWidth=2;
+
+		ctx.font = "55pt Impact";
+		//Text in right big circul
+		ctx.fillText("C++", 170, 380);
+		ctx.strokeText("C++", 170, 380);
+
+		//Text in right big circul
+		ctx.fillText("C", 795, 380);
+		ctx.strokeText("C", 795, 380);
+
+		//Text in main rectangle		
+		ctx.font = "60pt Impact";
+		ctx.fillText("First Year", 370, 580);
+		ctx.strokeText("First Year", 370, 580);
+/***************************************************/
+
+
+		ctx.fillStyle = "#A22E79";
+		ctx.strokeStyle = "#A22E79";
+		ctx.lineWidth=5;
+
+		//The small right arrow
+		ctx.beginPath();
+		ctx.moveTo(698, 472);
+		ctx.lineTo(723, 447);
+		ctx.lineTo(710, 447);
+		ctx.lineTo(750, 425);
+		ctx.lineTo(727.5, 465);
+		ctx.lineTo(727.5, 451);
+		ctx.lineTo(703, 477);
+		ctx.fill();
+
+		//The small left arrow
+		ctx.beginPath();
+		ctx.moveTo(342, 472);
+		ctx.lineTo(317, 447);
+		ctx.lineTo(330, 447);
+		ctx.lineTo(290, 425);
+		ctx.lineTo(312.5, 465);
+		ctx.lineTo(312.5, 451);
+		ctx.lineTo(337, 477);
+		ctx.fill();
+
+		ctx.strokeStyle = "#FBFBFB";
+		//The small right circul
+		ctx.beginPath();
+		ctx.arc(725, 450, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small left circul
+		ctx.beginPath();
+		ctx.arc(315, 450, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small buttom circul
+		ctx.beginPath();
+		ctx.arc(520, 820, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	//2
+		ctx.fillStyle = "#F1485F";
+		ctx.strokeStyle = "#F1485F";
+
+		//Main rectangle
+		ctx.strokeRect(342, 860, 358, 150);
+
+		// The long bottom arrow
+		ctx.beginPath();
+		ctx.moveTo(516, 1010);
+		ctx.lineTo(516, 1205);
+		ctx.lineTo(506, 1195);
+		ctx.lineTo(521, 1240);
+		ctx.lineTo(536, 1195);
+		ctx.lineTo(526, 1205);
+		ctx.lineTo(526, 1010);
+		ctx.fill();
+
+		//The big right circul 
+		ctx.beginPath();
+		ctx.arc(815, 735, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+		//The big left circul
+		ctx.beginPath();
+		ctx.arc(225, 735, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+
+/****************************************************/
+		ctx.fillStyle = "#FBFBFB";
+		ctx.strokeStyle = "#202020";
+		ctx.lineWidth=2;
+
+		ctx.font = "55pt Impact";
+		//Text in right big circul
+		ctx.fillText("JAVA", 155, 765);
+		ctx.strokeText("JAVA", 155, 765);
+
+		//Text in right big circul
+		ctx.fillText("C#", 775, 765);
+		ctx.strokeText("C#", 775, 765);
+
+		//Text in main rectangle		
+		ctx.font = "50pt Impact";
+		ctx.fillText("Second Year", 350, 965);
+		ctx.strokeText("Second Year", 350, 965);
+/***************************************************/
+
+
+		ctx.fillStyle = "#F1485F";
+		ctx.strokeStyle = "#F1485F";
+		ctx.lineWidth=5;
+
+		//The small right arrow
+		ctx.beginPath();
+		ctx.moveTo(698, 857);
+		ctx.lineTo(723, 832);
+		ctx.lineTo(710, 832);
+		ctx.lineTo(750, 810);
+		ctx.lineTo(727.5, 850);
+		ctx.lineTo(727.5, 836);
+		ctx.lineTo(703, 862);
+		ctx.fill();
+
+		//The small left arrow
+		ctx.beginPath();
+		ctx.moveTo(342, 857);
+		ctx.lineTo(317, 832);
+		ctx.lineTo(330, 832);
+		ctx.lineTo(290, 810);
+		ctx.lineTo(312.5, 850);
+		ctx.lineTo(312.5, 836);
+		ctx.lineTo(337, 862);
+		ctx.fill();
+
+		ctx.strokeStyle = "#FBFBFB";
+		//The small right circul
+		ctx.beginPath();
+		ctx.arc(725, 835, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small left circul
+		ctx.beginPath();
+		ctx.arc(315, 835, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small buttom circul
+		ctx.beginPath();
+		ctx.arc(520, 1205, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	//3
+		ctx.fillStyle = "#E86926";
+		ctx.strokeStyle = "#E86926";
+
+		//Main rectangle
+		ctx.strokeRect(342, 1245, 358, 150);
+
+		// The long bottom arrow
+		ctx.beginPath();
+		ctx.moveTo(516, 1395);
+		ctx.lineTo(516, 1590);
+		ctx.lineTo(506, 1580);
+		ctx.lineTo(521, 1625);
+		ctx.lineTo(536, 1580);
+		ctx.lineTo(526, 1590);
+		ctx.lineTo(526, 1395);
+		ctx.fill();
+
+		//The big right circul 
+		ctx.beginPath();
+		ctx.arc(815, 1120, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+		//The big left circul
+		ctx.beginPath();
+		ctx.arc(225, 1120, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+
+/****************************************************/
+		ctx.fillStyle = "#FBFBFB";
+		ctx.strokeStyle = "#202020";
+		ctx.lineWidth=2;
+
+
+		ctx.font = "45pt Impact";
+		//Text in right big circul
+		ctx.fillText("Proteus", 130, 1140);
+		ctx.strokeText("Proteus", 130, 1140);
+
+		//Text in right big circul
+		ctx.fillText("SQL", 770, 1140);
+		ctx.strokeText("SQL", 770, 1140);
+
+		//Text in main rectangle		
+		ctx.font = "50pt Impact";
+		ctx.fillText("Third Year", 380, 1350);
+		ctx.strokeText("Third Year", 380, 1350);
+/***************************************************/
+
+
+		ctx.fillStyle = "#E86926";
+		ctx.strokeStyle = "#E86926";
+		ctx.lineWidth=5;
+
+		//The small right arrow
+		ctx.beginPath();
+		ctx.moveTo(698, 1242);
+		ctx.lineTo(723, 1217);
+		ctx.lineTo(710, 1217);
+		ctx.lineTo(750, 1195);
+		ctx.lineTo(727.5, 1235);
+		ctx.lineTo(727.5, 1221);
+		ctx.lineTo(703, 1247);
+		ctx.fill();
+
+		//The small left arrow
+		ctx.beginPath();
+		ctx.moveTo(342, 1242);
+		ctx.lineTo(317, 1217);
+		ctx.lineTo(330, 1217);
+		ctx.lineTo(290, 1195);
+		ctx.lineTo(312.5, 1235);
+		ctx.lineTo(312.5, 1221);
+		ctx.lineTo(337, 1247);
+		ctx.fill();
+
+		ctx.strokeStyle = "#FBFBFB";
+		//The small right circul
+		ctx.beginPath();
+		ctx.arc(725, 1220, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small left circul
+		ctx.beginPath();
+		ctx.arc(315, 1220, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small buttom circul
+		ctx.beginPath();
+		ctx.arc(520, 1590, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	//4
+		ctx.fillStyle = "#AED141";
+		ctx.strokeStyle = "#AED141";
+
+		//Main rectangle
+		ctx.strokeRect(342, 1630, 358, 150);
+
+		// The long bottom arrow
+		ctx.beginPath();
+		ctx.moveTo(516, 1780);
+		ctx.lineTo(516, 1975);
+		ctx.lineTo(506, 1965);
+		ctx.lineTo(521, 2010);
+		ctx.lineTo(536, 1965);
+		ctx.lineTo(526, 1975);
+		ctx.lineTo(526, 1780);
+		ctx.fill();
+
+		//The big right circul 
+		ctx.beginPath();
+		ctx.arc(815, 1505, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+		//The big left circul
+		ctx.beginPath();
+		ctx.arc(225, 1505, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+
+/****************************************************/
+		ctx.fillStyle = "#FBFBFB";
+		ctx.strokeStyle = "#202020";
+		ctx.lineWidth=2;
+
+
+		ctx.font = "40pt Impact";
+		//Text in right big circul
+		ctx.fillText("Android", 140, 1525);
+		ctx.strokeText("Android", 140, 1525);
+
+		//Text in right big circul
+		ctx.fillText("WEB", 770, 1525);
+		ctx.strokeText("WEB", 770, 1525);
+
+		//Text in main rectangle		
+		ctx.font = "50pt Impact";
+		ctx.fillText("Fourth Year", 370, 1735);
+		ctx.strokeText("Fourth Year", 370, 1735);
+/***************************************************/
+
+
+		ctx.fillStyle = "#AED141";
+		ctx.strokeStyle = "#AED141";
+		ctx.lineWidth=5;
+
+		//The small right arrow
+		ctx.beginPath();
+		ctx.moveTo(698, 1627);
+		ctx.lineTo(723, 1602);
+		ctx.lineTo(710, 1602);
+		ctx.lineTo(750, 1580);
+		ctx.lineTo(727.5, 1620);
+		ctx.lineTo(727.5, 1606);
+		ctx.lineTo(703, 1632);
+		ctx.fill();
+
+		//The small left arrow
+		ctx.beginPath();
+		ctx.moveTo(342, 1627);
+		ctx.lineTo(317, 1602);
+		ctx.lineTo(330, 1602);
+		ctx.lineTo(290, 1580);
+		ctx.lineTo(312.5, 1620);
+		ctx.lineTo(312.5, 1606);
+		ctx.lineTo(337, 1632);
+		ctx.fill();
+
+		ctx.strokeStyle = "#FBFBFB";
+		//The small right circul
+		ctx.beginPath();
+		ctx.arc(725, 1605, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small left circul
+		ctx.beginPath();
+		ctx.arc(315, 1605, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small buttom circul
+		ctx.beginPath();
+		ctx.arc(520, 1975, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	//5
+		ctx.fillStyle = "#1FA1AE";
+		ctx.strokeStyle = "#1FA1AE";
+
+		//Main rectangle
+		ctx.strokeRect(342, 2015, 358, 150);
+
+		// The long bottom arrow
+		ctx.beginPath();
+		ctx.moveTo(516, 2165);
+		ctx.lineTo(516, 2360);
+		ctx.lineTo(506, 2350);
+		ctx.lineTo(521, 2395);
+		ctx.lineTo(536, 2350);
+		ctx.lineTo(526, 2360);
+		ctx.lineTo(526, 2165);
+		ctx.fill();
+		//The big right circul 
+		ctx.beginPath();
+		ctx.arc(815, 1890, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+		//The big left circul
+		ctx.beginPath();
+		ctx.arc(225, 1890, 100, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+
+/****************************************************/
+		ctx.fillStyle = "#FBFBFB";
+		ctx.strokeStyle = "#202020";
+		ctx.lineWidth=2;
+
+
+		ctx.font = "35pt Impact";
+		//Text in right big circul
+		ctx.fillText("Matlab", 160, 1915);
+		ctx.strokeText("Matlab", 160, 1915);
+
+		//Text in right big circul
+		ctx.fillText("Assembly", 725, 1910);
+		ctx.strokeText("Assembly", 725, 1910);
+
+		//Text in main rectangle		
+		ctx.font = "50pt Impact";
+		ctx.fillText("Fifth Year", 400, 2120);
+		ctx.strokeText("Fifth Year", 400, 2120);
+/***************************************************/
+
+
+		ctx.fillStyle = "#1FA1AE";
+		ctx.strokeStyle = "#1FA1AE";
+		ctx.lineWidth=5;
+
+		//The small right arrow
+		ctx.beginPath();
+		ctx.moveTo(698, 2012);
+		ctx.lineTo(723, 1987);
+		ctx.lineTo(710, 1987);
+		ctx.lineTo(750, 1965);
+		ctx.lineTo(727.5, 2005);
+		ctx.lineTo(727.5, 1991);
+		ctx.lineTo(703, 2017);
+		ctx.fill();
+
+		//The small left arrow
+		ctx.beginPath();
+		ctx.moveTo(342, 2012);
+		ctx.lineTo(317, 1987);
+		ctx.lineTo(330, 1987);
+		ctx.lineTo(290, 1965);
+		ctx.lineTo(312.5, 2005);
+		ctx.lineTo(312.5, 1991);
+		ctx.lineTo(337, 2017);
+		ctx.fill();
+
+		ctx.strokeStyle = "#FBFBFB";
+		//The small right circul
+		ctx.beginPath();
+		ctx.arc(725, 1990, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small left circul
+		ctx.beginPath();
+		ctx.arc(315, 1990, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+		//The small buttom circul
+		ctx.beginPath();
+		ctx.arc(520, 2360, 37, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.stroke();
+
+
+		//The End title 
+		ctx.font = "70pt Impact";
+		ctx.strokeStyle = "#FBFBFB";
+		ctx.fillStyle = "#202020";
+		ctx.fillText("Engineers Assossiation", 70, 2850);
+		ctx.strokeText("Engineers Assossiation", 70, 2850);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+	</script>
+	</div>
+
+	<div id="DivDownCanvas">
+	<canvas class="CanvasStyle" id="DownCanvas" width="1150" height="1150"></canvas>
+	<script type="text/javascript">
+		var c = document.querySelector("#DownCanvas");
+		var ctx = c.getContext("2d");
+
+
+
+	//The serrated
+		//1
+		ctx.lineWidth=3;
+		ctx.fillStyle = "#4C929D";
+		ctx.beginPath();
+		ctx.moveTo(530, 75);
+		ctx.lineTo(540, 2);
+		ctx.lineTo(610, 2);
+		ctx.lineTo(620, 75);
+		ctx.lineTo(620, 1075);
+		ctx.lineTo(610, 1148);
+		ctx.lineTo(540, 1148);
+		ctx.lineTo(530, 1075);
+		ctx.lineTo(530, 75);
+		ctx.fill();
+		ctx.stroke();
+
+		//2
+		ctx.beginPath();
+		ctx.moveTo(727, 100);
+		ctx.lineTo(785, 30);
+		ctx.lineTo(840, 55);
+		ctx.lineTo(818, 140);
+		ctx.lineTo(423, 1050);
+		ctx.lineTo(365, 1120);
+		ctx.lineTo(310, 1095);
+		ctx.lineTo(332, 1010);
+		ctx.lineTo(727, 100);
+		ctx.fill();
+		ctx.stroke();
+
+		//3
+		ctx.beginPath();
+		ctx.moveTo(908, 202);
+		ctx.lineTo(990, 160);
+		ctx.lineTo(1030, 200);
+		ctx.lineTo(975, 275);
+		ctx.lineTo(242, 948);
+		ctx.lineTo(160, 990);
+		ctx.lineTo(120, 950);	
+		ctx.lineTo(175, 875);
+		ctx.lineTo(908, 202);
+		ctx.fill();
+		ctx.stroke();
+
+		//4
+		ctx.beginPath();
+		ctx.moveTo(1018, 338);
+		ctx.lineTo(1100, 321);
+		ctx.lineTo(1125, 375);
+		ctx.lineTo(1051, 423.5);
+		ctx.lineTo(132.5, 808);
+		ctx.lineTo(50, 827);
+		ctx.lineTo(30, 775);
+		ctx.lineTo(99, 726.5);
+		ctx.lineTo(1018, 338);
+		ctx.fill();
+		ctx.stroke();
+
+
+		//5
+		ctx.beginPath();
+		ctx.moveTo(75, 530);
+		ctx.lineTo(2, 540);
+		ctx.lineTo(2, 610);
+		ctx.lineTo(75, 620);
+		ctx.lineTo(1075, 620);
+		ctx.lineTo(1148, 610);
+		ctx.lineTo(1148, 540);
+		ctx.lineTo(1075, 530);
+		ctx.lineTo(75, 530);
+		ctx.fill();
+		ctx.stroke();
+
+
+		//6
+		ctx.beginPath();
+		ctx.moveTo(1018, 812);
+		ctx.lineTo(1100, 829);
+		ctx.lineTo(1125, 775);
+		ctx.lineTo(1051, 726.5);
+		ctx.lineTo(132.5, 342);
+		ctx.lineTo(50, 323);
+		ctx.lineTo(30, 375);
+		ctx.lineTo(99, 423.5);
+		ctx.lineTo(1018, 812);
+		ctx.fill();
+		ctx.stroke();
+
+
+		//7
+		ctx.beginPath();
+		ctx.moveTo(175, 275);
+		ctx.lineTo(120, 200);
+		ctx.lineTo(160, 160);
+		ctx.lineTo(242, 202);
+		ctx.lineTo(975, 875);
+		ctx.lineTo(1030, 950);
+		ctx.lineTo(990, 990);
+		ctx.lineTo(908, 948);
+		ctx.lineTo(175, 275);
+		ctx.fill();
+		ctx.stroke();
+
+		//8
+		ctx.beginPath();
+		ctx.moveTo(332, 140);
+		ctx.lineTo(310, 55);
+		ctx.lineTo(365, 30);
+		ctx.lineTo(423, 100);
+		ctx.lineTo(818, 1010);
+		ctx.lineTo(840, 1095);
+		ctx.lineTo(785, 1120);
+		ctx.lineTo(727, 1050);
+		ctx.lineTo(332, 140);
+		ctx.fill();
+		ctx.stroke();
+
+		//Blue circle
+		ctx.fillStyle = "#4C929D";
+		ctx.beginPath();
+		ctx.arc(575, 575, 500, 0, Math.PI * 2, true);
+		ctx.closePath();
+		ctx.fill();
+
+		ctx.lineWidth=3;
+		ctx.stroke();
+
+			//White circle
+			ctx.fillStyle = "#FDFFFF";
+			ctx.beginPath();
+			ctx.arc(575, 575, 460, 0, Math.PI * 2, true);
+			ctx.closePath();
+			ctx.fill();
+			ctx.strokeStyle = "#010101";
+			ctx.lineWidth=3;
+			ctx.stroke();
+
+				//Darke blue circle
+				ctx.fillStyle = "#144251";
+				ctx.beginPath();
+				ctx.arc(575, 575, 420, 0, Math.PI * 2, true);
+				ctx.closePath();
+				ctx.fill();
+
+		//Plane
+		ctx.fillStyle = "#FDFFFF";
+		ctx.beginPath();
+		ctx.moveTo(975,510);
+		ctx.lineTo(650, 510);
+		ctx.lineTo(600, 175);
+		ctx.lineTo(535, 510);
+		ctx.lineTo(150, 575);
+		ctx.lineTo(530, 635);
+		ctx.lineTo(600, 975);
+		ctx.lineTo(650, 635);
+		ctx.lineTo(975, 635);
+		ctx.lineTo(975, 510);
+		ctx.fill();
+		ctx.lineWidth=3;
+		ctx.stroke();
+
+
+		ctx.lineWidth=5;
+		ctx.fillStyle = "#000000";
+		ctx.strokeStyle = "#000000";
+		ctx.font = "65pt Cairo";
+		ctx.strokeText("المهندسون", 530, 600);
+		ctx.fillText("المهندسون", 530, 600);
+
+		//Draw Pen
+			ctx.lineWidth=5;
+			//White Rectangle
+			ctx.fillStyle = "#FDFFFF";
+			ctx.strokeRect(375, 275, 70, 750);
+			ctx.fillRect(375, 275, 70, 750);
+
+			//Black Rectangle
+			ctx.fillStyle = "#010101";
+			ctx.strokeRect(375, 275, 20, 750);
+			ctx.fillRect(375, 275, 20, 750);
+
+			//Red Rectangle
+			ctx.fillStyle = "#D82027";
+			ctx.strokeRect(425, 275, 20, 750);
+			ctx.fillRect(425, 275, 20, 750);
+
+
+		//Pen head
+		ctx.fillStyle = "#E4B258";
+		ctx.beginPath();
+		ctx.moveTo(375, 275);
+		ctx.lineTo(396, 305);
+		ctx.lineTo(410, 275);
+		ctx.lineTo(424, 305);
+		ctx.lineTo(445, 275);
+		ctx.lineTo(410, 175);
+		ctx.lineTo(375, 275);
+		ctx.stroke();
+		ctx.fill();
+
+		//Head of pen head
+		ctx.fillStyle = "#010101";
+		ctx.beginPath();
+		ctx.moveTo(395, 210);
+		ctx.lineTo(410, 170);
+		ctx.lineTo(425, 210);
+		ctx.lineTo(400, 210);
+		ctx.fill();
+
+		//Foot of pen
+		ctx.fillStyle = "#E4B258";
+		ctx.strokeRect(375, 1005, 70, 20);
+		ctx.fillRect(375, 1005, 70, 20);
+		</script>
+	</div>
+	</body>
+</html>
